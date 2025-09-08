@@ -1,0 +1,59 @@
+<!DOCTYPE Channels>
+<!-- Copy this to SleepHeadData folder on app start once completed.
+Metric units please.. A conversion system will deal with the other measurement systems
+English only.. A different translation table will be used..
+It's only details & label that will be translated. name is used internally.
+Important: One id code per item, DO NOT CHANGE ID NUMBERS!!!
+-->
+<channels language="en" version="1.0">
+ <group name="CPAP">
+  <!-- Channel List -->
+
+
+
+  <channel id="0x111e" class="data" name="TestChan1" details="Debugging Channel #2" label="Test #1" unit="" color="pink"/>
+  <channel id="0x111f" class="data" name="TestChan2" details="Debugging Channel #2" label="Test #2" unit="" color="blue"/>
+
+  <channel id="0x1160" class="data" name="RMS9_E01" details="RMS9 Empty 1" label="E01" unit="" color="black"/>
+  <channel id="0x1161" class="data" name="RMS9_E02" details="RMS9 Empty 2" label="E02" unit="" color="black"/>
+  <channel id="0x1162" class="data" name="SetPressure" details="Set Pressure" label="Pressure" unit="" color="black"/>
+  <channel id="0x1163" class="data" name="BrokenSummary" details="Broken Summary" label="Broken Summary" unit="" color="black"/>
+  <channel id="0x1164" class="data" name="BrokenWaveform" details="Broken Waveform" label="Broken Waveform" unit="" color="black"/>
+
+  <channel id="0x1166" class="data" name="PRS1_0F" details="Unknown 0F" label="U0F" unit="?" color="dark green"/>
+  <channel id="0x1167" class="data" name="IntUnk1" details="Unknown 1" label="Unknown 1" unit="?" color="dark green"/>
+  <channel id="0x1168" class="data" name="IntUnk2" details="Unknown 2" label="Unknown 2" unit="?" color="dark green"/>
+
+
+ </group>
+ <group name="OXI">
+  </group>
+ <group name="SLEEP">
+ </group>
+ <group name="GENERAL">
+ </group>
+ <group name="PRS1">
+  <!-- PRS1 Settings -->
+ </group>
+ <group name="RMS9">
+  <!-- RESMED Settings -->
+  <channel id="0xe200" class="setting" scope="!session" name="RMS9Mode" details="PAP Mode" label="PAP Mode" type="integer" link="0x1200">
+   <Option id="0" value="CPAP"/>
+   <Option id="1" value="Auto"/>
+   <Option id="2" value="VPAP"/>
+   <Option id="3" value="ASV"/>
+  </channel>
+ </group>
+ <group name="MACHINE">
+  <!-- General Per Machine Settings -->
+  <channel id="0xf000" class="setting" scope="!machine" name="Type" details="Type" label="Type" type="integer">
+   <option id="0" value="Unknown"/>
+   <option id="1" value="CPAP"/>
+   <option id="2" value="Oximeter"/>
+   <option id="3" value="Sleep"/>
+   <option id="4" value="Journal"/>
+   <option id="5" value="EEG"/>
+  </channel>
+  <channel id="0xf006" class="setting" scope="!machine" name="Notes" details="Machine Notes" label="Notes" type="richtext"/>
+ </group>
+</channels>
